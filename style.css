@@ -1,0 +1,131 @@
+/* import font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family:'Montserrat', sans-serif;
+}
+
+/* the main section */
+.section-center {
+    margin: 0 auto;
+}
+
+/* gift img */
+.gift-img {
+    text-align: center;
+}
+
+/* card-pix */
+.card-pix {
+    display: flex;
+    padding: 0 1rem;
+}
+/* price */
+.price {
+    display: inline-block;
+    border: solid 1px;
+    border-radius: 5px;
+    background-color: rebeccapurple;
+    color: #fff;
+    padding: .5rem .2rem;
+    width: 30%;
+    margin: 0 auto;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: all .5s;
+}
+.price:hover {
+    letter-spacing: 2px;
+    background-color: rgba(102, 51, 153, 0.76);
+}
+
+
+/* gift info */
+.gift-info {
+    padding: 0 1.5rem;
+    text-align: center;
+    color: #333;
+}
+
+/* main title */
+#main-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rebeccapurple;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* giveaway */
+.giveaway {
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    margin: 2rem 0;
+    color: #333;
+}
+
+/* all paragraphs */
+p {
+    letter-spacing: 1px;
+    line-height: 1.4rem;
+}
+
+/* deadline */
+.deadline {
+    width: 450px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3rem;
+
+}
+.deadline-format {
+    border: solid;
+    border-radius: 5px;
+    width: 150px;
+    height: 12vh;
+    background-color: rebeccapurple;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* div inside deadline format */
+.deadline-format div {
+    text-align: center;
+}
+h4 {
+    margin: 0;
+    padding: 0;
+    font-size: 2.3rem;
+}
+span {
+    text-transform: capitalize;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* media query 768px */
+
+@media screen and (min-width: 900px){
+
+    /* the main section */
+    .section-center {
+        width: 960px;
+        display: flex;
+        justify-content: space-around;
+        margin-top: 5rem;
+    }
+    /* gift info */
+    .gift-info {
+      padding-right: 1rem;
+      width: 500px;
+
+    }
+  
+}
