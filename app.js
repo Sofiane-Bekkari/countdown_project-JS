@@ -45,3 +45,5 @@ const hour = futureDate.getHours();
 const minute = futureDate.getMinutes();
 
 giveaway.textContent = `giveway ends on ${weekday} ${date} ${month} ${year} ${hour}:${minute}am`
+
+// comming next a new function
