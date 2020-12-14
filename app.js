@@ -46,5 +46,32 @@ const minute = futureDate.getMinutes();
 
 giveaway.textContent = `giveway ends on ${weekday} ${date} ${month} ${year} ${hour}:${minute}am`
 
-// comming next a new function
-// install extension Github pullRequests
+
+//  get Future time on mellisecond 
+const futureTime = futureDate.getTime();
+console.log('FOR future:', futureTime);
+
+// fuction for remining time
+function getReminingTime(){
+    // varaible for current time
+    const today = new Date().getTime();
+    //console.log('Current time:', today);
+
+    // subtract future time from current time
+    const remineTime = futureDate - today 
+    //console.log('Here reminded time:', remineTime);  
+
+    // 1s = 1000ms
+    // 1min = 60s
+    // 1hr = 60min  **formula** 
+    // 1d = 24hr
+
+    // values in ms
+    const oneDay = 24 * 60 * 60 * 1000;
+    const oneHour = 60 * 60 * 1000;
+    const oneMinute = 60 * 1000;
+
+    console.log(oneDay,oneHour,oneMinute);
+}
+
+getReminingTime();
