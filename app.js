@@ -26,10 +26,10 @@ const weekDays = ['Monday',
 // grab the main variable
 const giveaway = document.querySelector('.giveaway');
 const deadLine = document.querySelector('.deadline');
-const counterItems = document.querySelectorAll('.deadline-format h4');
+const countItems = document.querySelectorAll('.deadline-format h4');
 
 // future date
-const futureDate = new Date(2021, 2, 10, 15, 30, 0)
+const futureDate = new Date(2021, 0, 1, 21, 30, 0)
 //console.log(futureDate);
 //console.log(futureDate.getDay());
 
@@ -51,6 +51,7 @@ giveaway.textContent = `giveway ends on ${weekday} ${date} ${month} ${year} ${ho
 const futureTime = futureDate.getTime();
 console.log('FOR future:', futureTime);
 
+
 // fuction for remining time
 function getReminingTime(){
     // varaible for current time
@@ -58,8 +59,8 @@ function getReminingTime(){
     //console.log('Current time:', today);
 
     // subtract future time from current time
-    const remineTime = futureDate - today 
-    //console.log('Here reminded time:', remineTime);  
+    const remineTime = futureTime - today 
+    console.log('Here reminded time:', remineTime);  
 
     // 1s = 1000ms
     // 1min = 60s
@@ -70,8 +71,26 @@ function getReminingTime(){
     const oneDay = 24 * 60 * 60 * 1000;
     const oneHour = 60 * 60 * 1000;
     const oneMinute = 60 * 1000;
+    //console.log(oneDay,oneHour,oneMinute);
 
-    console.log(oneDay,oneHour,oneMinute);
+    // calcuclte all values
+    let days = remineTime / oneDay;
+    // reassingnd days 
+    days = Math.floor(days); 
+    let hours = Math.floor((remineTime % oneDay) / oneHour);
+    const minutes = Math.floor((remineTime % oneHour) / oneMinute);
+    const seconds = Math.floor((remineTime % oneMinute) / 1000);
+
+
+    // create array values for cal
+    const showTime = [days,hours,minutes,seconds] 
+
+    // loop through countItems and put showTime values
+    countItems.forEach(function (item, index) {
+        item.innerHTML = showTime[index];
+    }); 
+
+
 }
 
 getReminingTime();
