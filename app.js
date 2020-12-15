@@ -28,10 +28,16 @@ const giveaway = document.querySelector('.giveaway');
 const deadLine = document.querySelector('.deadline');
 const countItems = document.querySelectorAll('.deadline-format h4');
 
-// future date
-const futureDate = new Date(2020, 11, 15, 8, 30, 0)
-//console.log(futureDate);
-//console.log(futureDate.getDay());
+// new functionality for adding 10 days for current date
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
+const currentMonth = currentDate.getMonth();
+const currentDay = currentDate.getDate();
+// below put each current date *plus ++ with day*
+const futureDate = new Date(currentYear, currentMonth, currentDay +2, 20, 30, 0);
+
+// future date hard coded for desired date
+//const futureDate = new Date(2020, 11, 15, 8, 30, 0);
 
 const year = futureDate.getFullYear();
 let month = futureDate.getMonth();
@@ -44,7 +50,7 @@ const date = futureDate.getDate();
 const hour = futureDate.getHours();
 const minute = futureDate.getMinutes();
 
-giveaway.textContent = `giveway ends on ${weekday} ${date} ${month} ${year} ${hour}:${minute}am`
+giveaway.textContent = `giveaway ends on ${weekday} ${date} ${month} ${year}, ${hour}:${minute}pm`
 
 
 //  get Future time on mellisecond 
@@ -100,7 +106,7 @@ function getReminingTime(){
     
     // if counter is 0 show the ending
     if (remineTime < 0) {
-        deadLine.innerHTML = `<h4>This Giveaway is ending</h4>`
+        deadLine.innerHTML = `<h4>This Giveaway has ends</h4>`
     }
 
 }
