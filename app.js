@@ -29,7 +29,7 @@ const deadLine = document.querySelector('.deadline');
 const countItems = document.querySelectorAll('.deadline-format h4');
 
 // future date
-const futureDate = new Date(2021, 0, 1, 21, 30, 0)
+const futureDate = new Date(2020, 11, 15, 8, 30, 0)
 //console.log(futureDate);
 //console.log(futureDate.getDay());
 
@@ -82,15 +82,30 @@ function getReminingTime(){
     const seconds = Math.floor((remineTime % oneMinute) / 1000);
 
 
+    // add a 0 to values less then 10
+    function format(add){
+        if (add < 10) {
+            return (add = `0${add}`)
+        }
+        return add
+    }
+
     // create array values for cal
     const showTime = [days,hours,minutes,seconds] 
 
     // loop through countItems and put showTime values
     countItems.forEach(function (item, index) {
-        item.innerHTML = showTime[index];
-    }); 
-
+        item.innerHTML = format(showTime[index]);
+    });
+    
+    // if counter is 0 show the ending
+    if (remineTime < 0) {
+        deadLine.innerHTML = `<h4>This Giveaway is ending</h4>`
+    }
 
 }
+
+//show second each sec
+let showSeconds = setInterval(getReminingTime,1000);
 
 getReminingTime();
